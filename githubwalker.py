@@ -56,6 +56,6 @@ def process_blob(b):
 
 
 if __name__ == '__main__':
-    walk('maugier/asterisk-hell')
+    walk(sys.argv[1])
     for p in seen.items():
         print("{0} {1}".format(*p))
