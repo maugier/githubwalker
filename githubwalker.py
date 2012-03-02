@@ -5,11 +5,12 @@ import json
 import sys
 
 seen = dict()
+session = requests.session()
 
 def fetch(url):
     sys.stderr.write(".")
     sys.stderr.flush()
-    r = requests.get(url)
+    r = session.get(url, prefetch=True)
     return json.loads(r.text)
 
 def walk(repo):
